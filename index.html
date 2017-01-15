@@ -46,22 +46,22 @@
 	$(document).ready(function () {
 		$(".fg1").css({ 'visibility': 'visible' })
 		$(".fg1").flipping_text({
-			tickerCount: 5,
+			tickerCount: 7,
 			tickerTime: 100
 		})
 		setTimeout(function () {
 			$(".fg2").css({ 'visibility': 'visible' })
 			$(".fg2").flipping_text({
 				tickerCount: 5,
-				tickerTime: 100
+				tickerTime: 80
 			})
-		}, 5 * 100 * 6)
+		}, 7 * 100 * 6)
 		setTimeout(function () {
 			$(".fg3").css({ 'visibility': 'visible' })
 			$(".fg3").flipping_text({
 				tickerCount: 5,
-				tickerTime: 100
+				tickerTime: 30
 			})
-		}, 5 * 100 * 18)
+		}, 7 * 100 * 6 + 5 * 80 * 12)
 	});
 			</script></div></body></html>
