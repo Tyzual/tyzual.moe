@@ -1,0 +1,66 @@
+html {
+	background: url(../img/004.jpg) no-repeat right top fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.info {
+	width: 30%;
+	height: 30%;
+	/*background: rgba(255, 255, 255, 0.3);*/
+	position: absolute;
+	visibility: hidden;
+	/*border: 2px dashed;*/
+	color: #ffffff;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.title {
+	font-size: 300%;
+}
+
+.txctr {
+	text-align: center;
+}
+
+.hctr2 {
+	width: 49%;
+	/*border: 2px dashed;*/
+	float: left;
+}
+
+.hctr {
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a:visited {
+	font-style: normal;
+	color: #ffffff;
+}
+a:link {
+	font-style: normal;
+	color: #ffffff;
+}
+
+a:hover {
+	font-style: normal;
+	color: #ffffff;
+}
+
+a:active {
+	font-style: normal;
+	color: #ffffff;
+}
+
+.snow-canvas {
+	position: absolute;
+	width: 99%;
+	height: 99%;
+}

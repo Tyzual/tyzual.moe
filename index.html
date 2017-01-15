@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<link href="css/index.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="src/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="src/index.js"></script>
+	<script type="text/javascript" src="src/jquery.flipping_text.js"></script>
+	<script type="text/javascript" src="src/snow-plugin.js"></script>
+
+	<title>TyzuaL</title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/fav.ico" media="screen" />
+</head>
+
+<body>
+	<div>
+	<canvas class="snow-canvas" speed="1" interaction="false" size="2" count="80" opacity="0.00001" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)" wind-power="0" image="false" width="1366" height="667"></canvas>
+	<canvas class="snow-canvas" speed="3" interaction="true" size="6" count="30" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)" opacity="0.00001" wind-power="2" image="false" width="1366" height="667"></canvas>
+	<canvas class="snow-canvas" speed="3" interaction="true" size="12" count="20" wind-power="-5" image="img/snow.png" width="1366" height="667"></canvas>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			adjustInfo()
+			adjustSnow()
+		});
+		$(function(){
+			$(".snow-canvas").snow();
+		});
+	</script>
+<div class="info">
+<div style="width: 100%">
+<h1 class="fg1 hidden title txctr">TyzuaL</h1>
+<h2 class="fg2 hidden txctr">一只潜伏在企鹅群中的小喵</h2>
+</div>
+<div class="hctr">
+<a href="http://tyzual.com" target="_blank">
+	<div class="fg3 hctr2 hidden txctr">Blog</div>
+</a>
+<a href="http://weibo.com/iunyasha" target="_blank">
+	<div class="fg3 hctr2 hidden txctr">Weibo</div>
+</a>
+</div>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$(".fg1").css({ 'visibility': 'visible' })
+		$(".fg1").flipping_text({
+			tickerCount: 5,
+			tickerTime: 100
+		})
+		setTimeout(function () {
+			$(".fg2").css({ 'visibility': 'visible' })
+			$(".fg2").flipping_text({
+				tickerCount: 5,
+				tickerTime: 100
+			})
+		}, 5 * 100 * 6)
+		setTimeout(function () {
+			$(".fg3").css({ 'visibility': 'visible' })
+			$(".fg3").flipping_text({
+				tickerCount: 5,
+				tickerTime: 100
+			})
+		}, 5 * 100 * 18)
+	});
+			</script></div></body></html>
