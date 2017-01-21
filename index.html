@@ -7,18 +7,12 @@
 	<script type="text/javascript" src="src/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="src/index.js"></script>
 	<script type="text/javascript" src="src/jquery.flipping_text.js"></script>
-	<script type="text/javascript" src="src/snow-plugin.js"></script>
 	<script type="text/javascript" src="src/imagesloaded.pkgd.min.js"></script>
 	<title>TyzuaL</title>
 	<link rel="shortcut icon" type="image/x-icon" href="img/fav.ico" media="screen" />
 	<script type="text/javascript">
 		var mainFunc = function () {
 			adjustInfo()
-			$(".snow-canvas").snow()
-
-			$(".fg1").css({
-				'visibility': 'visible'
-			})
 			$("body").animate({
 				visibility: 'visible'
 			}, 'slow');
@@ -55,16 +49,6 @@
 
 <body>
 	<div class="bg">
-	</div>
-	<div>
-		<canvas class="snow-canvas" speed="1" interaction="false" size="2" count="80" opacity="0.00001" start-color="rgba(253,252,251,1)"
-						end-color="rgba(251,252,253,0.3)" wind-power="0" image="false" width="1366" height="667"></canvas>
-			<canvas class="snow-canvas" speed="3" interaction="true" size="6" count="30" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)"
-							opacity="0.00001" wind-power="2" image="false" width="1366" height="667"></canvas>
-				<canvas class="snow-canvas" speed="3" interaction="true" size="12" count="20" wind-power="-5" image="img/snow.png" width="1366"
-								height="667"></canvas>
-					<canvas class="snow-canvas" speed="3" interaction="true" size="24" count="10" wind-power="-5" image="img/snow.png" width="1366"
-									height="667"></canvas>
 	</div>
 	<div class="info">
 		<div style="width: 100%">
