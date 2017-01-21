@@ -1,9 +1,9 @@
 body {
 	margin: 0px;
-}
-
-.bg {
-	background: url(../img/004.jpg) no-repeat right top fixed; 
+	background-image: url(../img/004.jpg) ;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-attachment: fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -13,6 +13,8 @@ body {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
+
+	visibility: hidden;
 }
 
 .info {
