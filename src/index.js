@@ -1,15 +1,26 @@
+function waitforbgimgload(callback) {
+	let img = new Image()
+	img.onload = function () {
+		callback()
+	}
+	img.src = 'img/004.jpg'
+	if (img.complete) {
+		img.onload();
+	}
+}
+
 var delay = (function () {
-	var timers = {};
+	var timers = {}
 	return function (callback, ms, uniqueId) {
 		if (!uniqueId) {
-			uniqueId = "Don't call this twice without a uniqueId";
+			uniqueId = "Don't call this twice without a uniqueId"
 		}
 		if (timers[uniqueId]) {
-			clearTimeout(timers[uniqueId]);
+			clearTimeout(timers[uniqueId])
 		}
-		timers[uniqueId] = setTimeout(callback, ms);
-	};
-})();
+		timers[uniqueId] = setTimeout(callback, ms)
+	}
+})()
 
 function adjustPoisition($info) {
 	var screenWidth = $(window).width(),

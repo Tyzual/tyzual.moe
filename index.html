@@ -11,7 +11,10 @@
 	<title>TyzuaL</title>
 	<link rel="shortcut icon" type="image/x-icon" href="img/fav.ico" media="screen" />
 	<script type="text/javascript">
-		$(document).ready(function () {
+		var mainFunc = function () {
+			adjustInfo()
+			$(".snow-canvas").snow()
+
 			$(".fg1").css({
 				'visibility': 'visible'
 			})
@@ -40,19 +43,16 @@
 					tickerTime: 30
 				})
 			}, 7 * 100 * 6 + 5 * 80 * 12)
-		});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			adjustInfo()
-		});
-		$(function () {
-			$(".snow-canvas").snow();
-		});
+		}
+		$(document).ready(
+			waitforbgimgload(mainFunc)
+		)
 	</script>
 </head>
 
 <body>
+	<div class="bg">
+	</div>
 	<div>
 		<canvas class="snow-canvas" speed="1" interaction="false" size="2" count="80" opacity="0.00001" start-color="rgba(253,252,251,1)"
 						end-color="rgba(251,252,253,0.3)" wind-power="0" image="false" width="1366" height="667"></canvas>
