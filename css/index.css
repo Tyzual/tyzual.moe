@@ -1,5 +1,10 @@
 body {
 	margin: 0px;
+	padding: 0px;
+}
+
+.bg {
+	margin: 0px;
 	background-image: url(../img/004.jpg) ;
 	background-repeat: no-repeat;
 	background-position: top right;
@@ -13,7 +18,6 @@ body {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
-
 	visibility: hidden;
 }
 
