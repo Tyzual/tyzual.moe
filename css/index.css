@@ -61,7 +61,6 @@ a:active {
 }
 
 .snow-canvas {
-	/*visibility: hidden;*/
 	position: absolute;
 	width: 99%;
 	height: 99%;

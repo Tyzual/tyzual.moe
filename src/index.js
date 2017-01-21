@@ -1,3 +1,16 @@
+var delay = (function () {
+	var timers = {};
+	return function (callback, ms, uniqueId) {
+		if (!uniqueId) {
+			uniqueId = "Don't call this twice without a uniqueId";
+		}
+		if (timers[uniqueId]) {
+			clearTimeout(timers[uniqueId]);
+		}
+		timers[uniqueId] = setTimeout(callback, ms);
+	};
+})();
+
 function adjustPoisition($info) {
 	var screenWidth = $(window).width(),
 		screenHeight = $(window).height() //当前浏览器窗口的 宽高  
@@ -23,7 +36,9 @@ function adjustInfo() {
 
 	//浏览器窗口大小改变时  
 	$(window).resize(function () {
-		adjustPoisition($info)
+		delay(function () {
+			adjustPoisition($info)
+		}, 1000, "resizeTimer")
 	})
 
 	//浏览器有滚动条时的操作、  
