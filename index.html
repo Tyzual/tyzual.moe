@@ -13,11 +13,8 @@
 	<script type="text/javascript">
 		var mainFunc = function () {
 			adjustInfo()
-			// $(".bg").animate({
-			// 	visibility: 'visible'
-			// }, 'slow');
 			$(".bg").css({
-					'visibility': 'visible'
+				'visibility': 'visible'
 			})
 			$(".fg1").flipping_text({
 				tickerCount: 7,
@@ -45,7 +42,9 @@
 		$(document).ready(
 			$("body").imagesLoaded({
 				background: ".bg"
-			}, mainFunc)
+			}).done(function(instance) {
+				mainFunc()
+			})
 		)
 	</script>
 </head>
