@@ -1,14 +1,3 @@
-function waitforbgimgload(callback) {
-	let img = new Image()
-	img.onload = function () {
-		callback()
-	}
-	img.src = 'img/004.jpg'
-	if (img.complete) {
-		img.onload();
-	}
-}
-
 var delay = (function () {
 	var timers = {}
 	return function (callback, ms, uniqueId) {
@@ -49,7 +38,7 @@ function adjustInfo() {
 	$(window).resize(function () {
 		delay(function () {
 			adjustPoisition($info)
-		}, 1000, "resizeTimer")
+		}, 500, "resizeTimer")
 	})
 
 	//浏览器有滚动条时的操作、  

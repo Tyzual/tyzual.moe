@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="src/index.js"></script>
 	<script type="text/javascript" src="src/jquery.flipping_text.js"></script>
 	<script type="text/javascript" src="src/snow-plugin.js"></script>
+	<script type="text/javascript" src="src/imagesloaded.pkgd.min.js"></script>
 	<title>TyzuaL</title>
 	<link rel="shortcut icon" type="image/x-icon" href="img/fav.ico" media="screen" />
 	<script type="text/javascript">
@@ -45,7 +46,9 @@
 			}, 7 * 100 * 6 + 5 * 80 * 12)
 		}
 		$(document).ready(
-			waitforbgimgload(mainFunc)
+			$(".bg").imagesLoaded({
+				background: true
+			}, mainFunc)
 		)
 	</script>
 </head>
