@@ -40,6 +40,12 @@ body {
 	color: #ffffff;
 }
 
+.snow {
+	position: absolute;
+	top: 0;
+	color: #fff;
+}
+
 .hidden {
 	visibility: hidden;
 }
