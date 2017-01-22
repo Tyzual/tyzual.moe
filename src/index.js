@@ -11,6 +11,21 @@ var delay = (function () {
 	}
 })()
 
+var imgLoad = function (url, callback) {
+	var img = new Image()
+
+	img.src = url
+	if (img.complete) {
+		callback()
+	} else {
+		img.onload = function () {
+			callback()
+			img.onload = null
+		}
+	}
+
+}
+
 function adjustPoisition($info) {
 	var screenWidth = $(window).width(),
 		screenHeight = $(window).height() //当前浏览器窗口的 宽高  
