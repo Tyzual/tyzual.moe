@@ -20,7 +20,7 @@ var imgLoad = function (url, callback) {
 	} else {
 		img.onload = function () {
 			callback()
-			img.onload = null
+			// img.onload = null
 		}
 	}
 
