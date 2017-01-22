@@ -86,3 +86,33 @@ function adjustInfo() {
 		adjustPoisition($info)
 	})
 }
+
+var mainFunc = function () {
+	adjustInfo()
+	snow()
+	$(".bg").css({
+		'visibility': 'visible'
+	})
+	$(".fg1").flipping_text({
+		tickerCount: 7,
+		tickerTime: 100
+	})
+	setTimeout(function () {
+		$(".fg2").css({
+			'visibility': 'visible'
+		})
+		$(".fg2").flipping_text({
+			tickerCount: 5,
+			tickerTime: 80
+		})
+	}, 7 * 100 * 6)
+	setTimeout(function () {
+		$(".fg3").css({
+			'visibility': 'visible'
+		})
+		$(".fg3").flipping_text({
+			tickerCount: 5,
+			tickerTime: 30
+		})
+	}, 7 * 100 * 6 + 5 * 80 * 12)
+}
