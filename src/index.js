@@ -12,26 +12,28 @@ var delay = (function () {
 })()
 
 let snow = function () {
-	var d = "<div class='snow'>❅<div>"
+	var snowDiv = "<div class='snow'>❅<div>"
 	setInterval(function () {
-		var f = $(document).width();
-		var e = Math.random() * f - 100;
-		var o = 0.3 + Math.random();
-		var fon = 10 + Math.random() * 30;
-		var l = e - 100 + 200 * Math.random();
-		var k = 2000 + 5000 * Math.random();
-		$(d).clone().appendTo(".snowbg").css({
-			left: e + "px",
-			opacity: o,
-			"font-size": fon,
+		const width = $(document).width()
+		const height = $(document).height()
+		const startX = Math.random() * width
+		const delta = width / 5
+		const endX = startX + (Math.random() * 2 - 1) * delta
+		const opacity = 0.3 + Math.random()
+		const size = 10 + Math.random() * 30
+		const speed = 1000 + 8000 * Math.random();
+		$(snowDiv).clone().appendTo(".snowbg").css({
+			left: startX + "px",
+			opacity: opacity,
+			"font-size": size,
 		}).animate({
-			top: "400px",
-			left: l + "px",
+			top: height.toString() + "px",
+			left: endX + "px",
 			opacity: 0.1,
-		}, k, "linear", function () {
+		}, speed, "linear", function () {
 			$(this).remove()
 		})
-	}, 200)
+	}, 100)
 }
 
 var imgLoad = function (url, callback) {
