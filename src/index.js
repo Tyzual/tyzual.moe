@@ -1,5 +1,5 @@
-var delay = (function () {
-	var timers = {}
+const delay = (function () {
+	const timers = {}
 	return function (callback, ms, uniqueId) {
 		if (!uniqueId) {
 			uniqueId = "Don't call this twice without a uniqueId"
@@ -11,8 +11,8 @@ var delay = (function () {
 	}
 })()
 
-let snow = function () {
-	var snowDiv = "<div class='snow'>❅<div>"
+const snow = function () {
+	const snowDiv = "<div class='snow'>❅<div>"
 	setInterval(function () {
 		const width = $(document).width()
 		const height = $(document).height()
@@ -38,10 +38,10 @@ let snow = function () {
 	}, 100)
 }
 
-var imgLoad = function (url, callback) {
-	var img = new Image()
+const imgLoad = function (url, callback) {
+	const img = new Image()
 	img.src = url
-	if (img.complete) {
+	if (img.compconste) {
 		callback()
 	} else {
 		img.onload = function () {
@@ -52,15 +52,16 @@ var imgLoad = function (url, callback) {
 }
 
 function adjustPoisition($info) {
-	var screenWidth = $(window).width(),
+	const screenWidth = $(window).width(),
 		screenHeight = $(window).height() //当前浏览器窗口的 宽高  
-	var scrolltop = $(document).scrollTop() //获取当前窗口距离页面顶部高度  
+	const scrolltop = $(document).scrollTop() //获取当前窗口距离页面顶部高度  
+	let objLeft = 0
 	if (screenWidth / screenHeight >= 1.3) {
-		var objLeft = (screenWidth / 5 - $info.width() / 2)
+		objLeft = (screenWidth / 5 - $info.width() / 2)
 	} else {
-		var objLeft = (screenWidth / 2 - $info.width() / 2)
+		objLeft = (screenWidth / 2 - $info.width() / 2)
 	}
-	var objTop = (screenHeight - $info.height()) / 2 + scrolltop
+	const objTop = (screenHeight - $info.height()) / 2 + scrolltop
 
 	$info.animate({
 		left: objLeft + 'px',
@@ -71,7 +72,7 @@ function adjustPoisition($info) {
 }
 
 function adjustInfo() {
-	var $info = $(".info")
+	const $info = $(".info")
 	adjustPoisition($info)
 
 	//浏览器窗口大小改变时  
@@ -87,7 +88,7 @@ function adjustInfo() {
 	})
 }
 
-var mainFunc = function () {
+const mainFunc = function () {
 	adjustInfo()
 	snow()
 	$(".bg").css({
