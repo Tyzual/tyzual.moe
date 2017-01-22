@@ -7,11 +7,11 @@
 	<script type="text/javascript" src="src/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="src/index.js"></script>
 	<script type="text/javascript" src="src/jquery.flipping_text.js"></script>
+	<script type="text/javascript" src="src/imagesloaded.pkgd.min.js"></script>
 	<title>TyzuaL</title>
 	<link rel="shortcut icon" type="image/x-icon" href="img/fav.ico" media="screen" />
 	<script type="text/javascript">
 		var mainFunc = function () {
-			console.log('call callback')
 			adjustInfo()
 			$(".bg").css({
 				'visibility': 'visible'
@@ -40,7 +40,11 @@
 			}, 7 * 100 * 6 + 5 * 80 * 12)
 		}
 		$(document).ready(
-			imgLoad('img/004.jpg', mainFunc)
+			$("body").imagesLoaded({
+				background: ".bg"
+			}).done(function(instance) {
+				mainFunc()
+			})
 		)
 	</script>
 </head>
