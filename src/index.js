@@ -23,11 +23,15 @@ const snow = function () {
 		endX = Math.max(endX, 0)
 		const opacity = 0.3 + Math.random()
 		const size = 10 + Math.random() * 30
-		const speed = 1000 + 8000 * Math.random();
-		$(snowDiv).clone().appendTo(".snowbg").css({
+		const speed = 1000 + 8000 * Math.random()
+		const rotateStart = Math.random() * 360
+		const rotateEnd = Math.random() * 360
+		let snowClone = $(snowDiv).clone()
+		snowClone.appendTo(".snowbg").css({
 			left: startX + "px",
 			opacity: opacity,
 			"font-size": size,
+			transform: "rotate(" + rotateStart.toString() + "deg)"
 		}).animate({
 			top: height.toString() + "px",
 			left: endX + "px",
@@ -35,7 +39,19 @@ const snow = function () {
 		}, speed, "linear", function () {
 			$(this).remove()
 		})
-	}, 100)
+		$({
+			deg: 0
+		}).animate({
+			deg: rotateEnd
+		}, {
+			duration: speed,
+			step: function (now) {
+				snowClone.css({
+					transform: 'rotate(' + now + 'deg)'
+				})
+			}
+		})
+	}, 150)
 }
 
 const imgLoad = function (url, callback) {
